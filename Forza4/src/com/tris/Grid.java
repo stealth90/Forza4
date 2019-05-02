@@ -62,10 +62,10 @@ public class Grid {
             if(sumDiagFirstLeft==4|| sumDiagFirstLeft==20 || sumDiagSecondLeft==4 || sumDiagSecondLeft==20)return true;
         }
         for(int i=0;i<3;i++){
-            int maxShift=2-i;
+            int maxShift=3+i;
             int shift=0;
-            for(int j=1;j<4;j++) {
-                sumDiagSecondRight = board[i+shift][j] + board[i+1+shift][j-1] + board[i+2+shift][j-2] + board[i+3+shift][j-3];
+            for(int j=6;j>maxShift;j--) {
+                sumDiagSecondRight = board[i+shift][j] + board[i+1+shift][j-1] + board[i+2+shift][j-1] + board[i+3+shift][j-3];
                 System.out.println(sumDiagSecondRight);
                 ++shift;
             }
